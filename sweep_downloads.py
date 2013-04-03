@@ -2,8 +2,7 @@ import os
 import subprocess
 import datetime
 
-directory = "/home/peterw/Downloads"
-files = [ (directory + "/" + f) for f in os.listdir(directory)]
+directory = os.getenv("HOME")+"/Downloads/"
 
 def is_old(f):
     # delta = 7 days
@@ -19,6 +18,7 @@ def remove(f):
     print(f + " id old!")
 
 # process each file
-for f in files:
+for f in os.listdir(directory):
+    f = directory + f
     if is_old(f):
         remove(f)
