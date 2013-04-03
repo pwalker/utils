@@ -1,4 +1,5 @@
 import os
+import subprocess
 import datetime
 
 directory = "/home/peterw/Downloads"
@@ -14,7 +15,7 @@ def is_old(f):
     return (last_time + delta) < datetime.datetime.now()
 
 def remove(f):
-    os.system("trash-put "+f)
+    subprocess.call(["trash-put",f])
     print(f + " id old!")
 
 # process each file
