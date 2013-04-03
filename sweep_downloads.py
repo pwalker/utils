@@ -14,6 +14,7 @@ def is_old(f):
     return (last_time + delta) < datetime.datetime.now()
 
 def remove(f):
+    # https://github.com/andreafrancia/trash-cli    
     subprocess.call(["trash-put",f])
     print(f + " id old!")
 
