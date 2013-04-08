@@ -4,6 +4,8 @@ import datetime
 
 directory = os.getenv("HOME")+"/Downloads/"
 
+print ("%s - sweeping %s" % (datetime.datetime.now(), directory))
+
 def is_old(f):
     # delta = 7 days
     delta = datetime.timedelta(7)
